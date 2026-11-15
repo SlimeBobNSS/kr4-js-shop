@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Интерактивный каталог 22 пилотов с поиском, фильтрами и сортировкой." name="description"/>
+<title>
+   Пилоты 2026 — F1 Hub
+  </title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+<script defer="" src="js/data.js">
+</script>
+<script defer="" src="js/main.js">
+</script>
+<script defer="" src="js/cart.js">
+</script>
+<script defer="" src="js/catalog.js">
+</script>
+<script defer="" src="js/tickets.js">
+</script>
+<script defer="" src="js/validation.js">
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">
+   Перейти к основному содержимому
+  </a>
+<header class="site-header">
+<div class="site-header__inner">
+<a class="site-header__logo" href="index.html">
+     🏁 F1 Hub
+    </a>
+<button aria-controls="mobile-site-nav" aria-expanded="false" aria-label="Открыть меню" class="site-nav-toggle" type="button">
+<span aria-hidden="true" class="site-nav-toggle__icon">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</span>
+<span class="site-nav-toggle__label">
+      Меню
+     </span>
+</button>
+<nav aria-label="Основная навигация" class="site-nav" id="mobile-site-nav">
+<ul class="site-nav__list">
+<li class="site-nav__item">
+<a class="site-nav__link" href="index.html">
+        Главная
+       </a>
+</li>
+<li class="site-nav__item">
+<a aria-current="page" class="site-nav__link site-nav__link--active" href="catalog.html">
+        База данных
+       </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="order.html">
+        Билеты
+       </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="contacts.html">
+        Контакты
+       </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="cart.html">
+        Корзина
+        <span aria-label="Товаров в корзине" data-cart-count="">
+         0
+        </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="section">
+<nav aria-label="Хлебные крошки" class="breadcrumbs">
+<a class="breadcrumbs__link" href="index.html">
+      Главная
+     </a>
+<span class="breadcrumbs__current">
+      База пилотов
+     </span>
+</nav>
+<h1 class="section__title">
+     Пилоты Формулы-1 — 2026
+    </h1>
+</div>
+<section aria-label="Интерактивный каталог пилотов" class="catalog-layout">
+<aside class="catalog-filters">
+<h2 class="catalog-filters__title">
+      Поиск и фильтры
+     </h2>
+<form class="filters-form" id="drivers-filters" role="search">
+<div class="order-form__field">
+<label class="order-form__label" for="driver-search">
+        Поиск по имени пилота
+       </label>
+<input class="order-form__input" id="driver-search" name="search" placeholder="Например, Алонсо" type="search"/>
+</div>
+<fieldset class="filters-form__section">
+<legend>
+        Силовая установка
+       </legend>
+<label>
+<input name="pu" type="checkbox" value="ferrari"/>
+        Ferrari
+       </label>
+<label>
+<input name="pu" type="checkbox" value="mercedes"/>
+        Mercedes
+       </label>
+<label>
+<input name="pu" type="checkbox" value="honda"/>
+        Honda
+       </label>
+<label>
+<input name="pu" type="checkbox" value="audi"/>
+        Audi
+       </label>
+<label>
+<input name="pu" type="checkbox" value="ford"/>
+        Red Bull Ford
+       </label>
+</fieldset>
+<fieldset class="filters-form__section">
+<legend>
+        Статус пилота
+       </legend>
+<label>
+<input checked="" name="status" type="radio" value="all"/>
+        Все пилоты
+       </label>
+<label>
+<input name="status" type="radio" value="pro"/>
+        Основной состав
+       </label>
+<label>
+<input name="status" type="radio" value="rookie"/>
+        Новички сезона
+       </label>
+</fieldset>
+<div class="order-form__field">
+<label class="order-form__label" for="driver-sort">
+        Сортировка
+       </label>
+<select class="order-form__input" id="driver-sort" name="sort">
+<option value="points-desc">
+         По очкам: убывание
+        </option>
+<option value="points-asc">
+         По очкам: возрастание
+        </option>
+<option value="name-asc">
+         По имени: А–Я
+        </option>
+<option value="number-asc">
+         По стартовому номеру
+        </option>
+</select>
+</div>
+<label class="filters-checkbox">
+<input id="driver-favorites-only" type="checkbox"/>
+       Только избранные
+      </label>
+<button class="button button--secondary" type="reset">
+       Сбросить фильтры
+      </button>
+</form>
+</aside>
+<section class="catalog-products">
+<div class="section-heading">
+<h2 class="catalog-products__title">
+       Пилоты чемпионата
+      </h2>
+<span aria-live="polite" class="result-count" id="drivers-count" role="status">
+</span>
+</div>
+<div class="products-grid" data-drivers-container="" id="drivers-grid">
+</div>
+<p class="catalog-empty" hidden="" id="drivers-empty">
+      Пилоты не найдены. Измените поиск или сбросьте фильтры.
+     </p>
+<p class="cart-notice" hidden="" id="driver-notice" role="status">
+</p>
+</section>
+</section>
+<section class="section">
+<h2 class="section__title">Билеты на Гран-при</h2>
+<p class="catalog-data-note">Дополнительно к базе пилотов здесь можно искать и сравнивать билеты: категории, цены и доступность.</p>
+</section>
+<section class="section ticket-catalog-extra" aria-label="Каталог билетов">
+<form class="ticket-controls" id="catalog-ticket-filters" data-ticket-filters="" role="search">
+<div class="order-form__field">
+<label class="order-form__label" for="catalog-ticket-search">
+       Поиск по Гран-при или категории
+      </label>
+<input class="order-form__input" id="catalog-ticket-search" data-ticket-search="" placeholder="Например, Катар" type="search"/>
+</div>
+<div class="order-form__field">
+<label class="order-form__label" for="catalog-ticket-category">
+       Категория
+      </label>
+<select class="order-form__input" id="catalog-ticket-category" data-ticket-category="">
+<option value="all">
+        Все категории
+       </option>
+<option value="general">
+        Свободное размещение
+       </option>
+<option value="grandstand">
+        Трибуна
+       </option>
+<option value="premium">
+        Премиум-трибуна
+       </option>
+<option value="vip">
+        VIP-зона
+       </option>
+</select>
+</div>
+<div class="order-form__field">
+<label class="order-form__label" for="catalog-ticket-sort">
+       Сортировка
+      </label>
+<select class="order-form__input" id="catalog-ticket-sort" data-ticket-sort="">
+<option value="default">По Гран-при и категориям</option>
+<option value="price-asc">
+        Цена: по возрастанию
+       </option>
+<option value="price-desc">
+        Цена: по убыванию
+       </option>
+<option value="title-asc">
+        По названию
+       </option>
+</select>
+</div>
+<label class="filters-checkbox">
+<input id="catalog-ticket-available" data-ticket-available="" type="checkbox"/>
+      Только доступные
+     </label>
+<button class="button button--secondary" type="reset">
+      Сбросить
+     </button>
+</form>
+<p class="catalog-data-note ticket-statistics" data-products-stats aria-live="polite">Загрузка статистики…</p>
+<div class="section-heading">
+<h2 class="catalog-products__title" data-tickets-heading>Каталог билетов</h2>
+<span aria-live="polite" class="result-count" id="catalog-tickets-count" data-tickets-count="" role="status">
+</span>
+</div><p class="ticket-groups__hint" data-tickets-hint>При группировке билеты распределены по Гран-при. При выборе сортировки товары выводятся в общем порядке.</p>
+<div class="ticket-groups" data-tickets-container="" id="catalog-ticket-grid">
+</div>
+<p class="catalog-empty" hidden="" id="catalog-tickets-empty" data-tickets-empty="">
+     По указанным условиям билеты не найдены. Попробуйте изменить фильтры.
+    </p>
+<p class="cart-notice" hidden="" id="catalog-ticket-notice" data-ticket-notice="" role="status">
+</p>
+<p class="ticket-bottom-link">
+<a class="button button--primary" href="order.html">
+      Открыть страницу билетов
+      
+</a>
+</p>
+</section>
+</main>
+<footer class="site-footer">
+<p class="site-footer__copy">© 2026 F1 Hub · Мир Формулы-1</p>
+</footer>
+</body>
+</html>

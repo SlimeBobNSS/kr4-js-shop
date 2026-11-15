@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Корзина билетов на Формулу-1: выбор количества, промокод, расчёт итоговой суммы и заявка." name="description"/>
+<title>
+   Корзина — F1 Hub
+  </title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+<script defer="" src="js/data.js">
+</script>
+<script defer="" src="js/main.js">
+</script>
+<script defer="" src="js/cart.js">
+</script>
+<script defer="" src="js/catalog.js">
+</script>
+<script defer="" src="js/tickets.js">
+</script>
+<script defer="" src="js/validation.js">
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">
+   Перейти к основному содержимому
+  </a>
+<header class="site-header">
+<div class="site-header__inner">
+<a class="site-header__logo" href="index.html">
+     🏁 F1 Hub
+    </a>
+<button aria-controls="mobile-site-nav" aria-expanded="false" aria-label="Открыть меню" class="site-nav-toggle" type="button">
+<span aria-hidden="true" class="site-nav-toggle__icon">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</span>
+<span class="site-nav-toggle__label">
+      Меню
+     </span>
+</button>
+<nav aria-label="Основная навигация" class="site-nav" id="mobile-site-nav">
+<ul class="site-nav__list">
+<li class="site-nav__item">
+<a class="site-nav__link" href="index.html">
+        Главная
+       </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="catalog.html">
+        База данных
+       </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="order.html">
+        Билеты
+       </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="contacts.html">
+        Контакты
+       </a>
+</li>
+<li class="site-nav__item">
+<a aria-current="page" class="site-nav__link site-nav__link--active" href="cart.html">
+        Корзина
+        <span aria-label="Товаров в корзине" data-cart-count="">
+         0
+        </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="section">
+<nav aria-label="Хлебные крошки" class="breadcrumbs">
+<a class="breadcrumbs__link" href="index.html">
+      Главная
+     </a>
+<a class="breadcrumbs__link" href="order.html">
+      Билеты
+     </a>
+<span class="breadcrumbs__current">
+      Корзина
+     </span>
+</nav>
+<h1 class="section__title">Корзина и оформление заявки</h1>
+<p class="catalog-data-note">Проверьте выбранные билеты, измените количество и рассчитайте итоговую сумму.</p>
+</div>
+<section class="section cart-layout">
+<div>
+<h2 class="catalog-products__title">
+      Выбранные билеты
+     </h2>
+<div data-cart-items="" id="cart-items">
+</div>
+<p class="catalog-empty" hidden="" id="cart-empty">
+      Корзина пуста.
+      <a href="order.html">
+       Перейти к билетам
+      </a>
+</p>
+<div class="cart-summary">
+<p>
+       Сумма:
+       <strong id="cart-subtotal">
+        0 ₽
+       </strong>
+</p>
+<div class="promo-row">
+<label class="order-form__label" for="promo-code">Промокод</label>
+<div class="promo-input">
+<input autocomplete="off" class="order-form__input" id="promo-code" placeholder="F1START10" type="text"/>
+<button class="button button--secondary" id="apply-promo" type="button">
+         Применить
+        </button>
+</div>
+<p class="form-hint">Промокод F1START10 даёт скидку 10% на сумму корзины.</p>
+<p class="cart-notice" hidden="" id="promo-status" role="status">
+</p>
+</div>
+<p>
+       Скидка:
+       <strong id="cart-discount">
+        0 ₽
+       </strong>
+</p>
+<p class="cart-summary__total">
+       Итого:
+       <strong id="cart-total">
+        0 ₽
+       </strong>
+</p>
+</div>
+</div>
+<section class="cart-checkout">
+<h2 class="catalog-products__title">
+      Оформить заявку
+     </h2><p class="form-hint">Отправка заявок пока недоступна. После проверки заполнения вы увидите итоговую сумму.</p>
+<form class="product-info checkout-form" id="cart-form" novalidate="">
+<div class="order-form__field">
+<label class="order-form__label" for="buyer-name">
+        Имя и фамилия
+       </label>
+<input autocomplete="name" class="order-form__input" id="buyer-name" aria-describedby="buyer-name-error" maxlength="80" minlength="2" name="name" required="" type="text"/>
+<small class="field-error" id="buyer-name-error">
+</small>
+</div>
+<div class="order-form__field">
+<label class="order-form__label" for="buyer-email">
+        E-mail
+       </label>
+<input autocomplete="email" class="order-form__input" id="buyer-email" aria-describedby="buyer-email-error" name="email" required="" type="email"/>
+<small class="field-error" id="buyer-email-error">
+</small>
+</div>
+<div class="order-form__field">
+<label class="order-form__label" for="buyer-phone">
+        Телефон
+       </label>
+<input autocomplete="tel" class="order-form__input" id="buyer-phone" aria-describedby="buyer-phone-error" name="phone" placeholder="+7 900 000-00-00" required="" type="tel"/>
+<small class="field-error" id="buyer-phone-error">
+</small>
+</div>
+<div class="order-form__field form-field--checkbox">
+<label>
+<input id="buyer-agreement" aria-describedby="buyer-agreement-error" name="agreement" required="" type="checkbox"/>
+        Подтверждаю правильность указанных контактных данных
+       </label>
+<small class="field-error" id="buyer-agreement-error">
+</small>
+</div>
+<button class="button button--primary" id="submit-cart" type="submit">
+       Сформировать заявку
+      </button>
+</form>
+<p aria-live="polite" class="form-feedback" hidden="" id="cart-form-status" role="status">
+</p>
+</section>
+</section>
+</main>
+<footer class="site-footer">
+<p class="site-footer__copy">© 2026 F1 Hub · Мир Формулы-1</p>
+</footer>
+</body>
+</html>

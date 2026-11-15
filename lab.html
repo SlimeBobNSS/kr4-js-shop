@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лаборатория JavaScript №15–17 — F1 Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/lab.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="index.html">F1 Hub</a>
+    <a class="button button--secondary" href="index.html">Вернуться на сайт</a>
+  </div>
+</header>
+<main class="section lab-page" id="main">
+  <h1 class="section__title">Учебная лаборатория JavaScript №15–17</h1>
+  <p class="catalog-data-note">Отдельная страница для проверки переменных, функций, массивов, циклов, DOM и безопасного вывода. Она не участвует в пользовательском сценарии магазина.</p>
+  <section class="product-info lab-page__content" aria-labelledby="lab-title">
+    <h2 id="lab-title">Проверка скриптов</h2>
+    <p class="form-hint">Откройте DevTools → Console (F12), затем нажмите кнопку. Вы увидите объект товара, результаты функций и таблицу. Для Breakpoint откройте Sources → js/lab.js → поставьте остановку внутри <code>runLabChecks()</code>.</p>
+    <p id="lab-message" role="status" aria-live="polite">JavaScript ещё не выполнился.</p>
+    <button id="lab-run" class="button button--primary" type="button">Повторить проверки в консоли</button>
+    <h3>Сводка каталога</h3>
+    <pre id="lab-results" class="lab-page__results" aria-live="polite">Результат будет выведен после выполнения скрипта.</pre>
+    <h3>Объект и свойства первого товара</h3>
+    <pre id="lab-product" class="lab-page__results"></pre>
+    <p class="form-hint">Все текстовые результаты выводятся через <code>textContent</code>, а не <code>innerHTML</code>. Для сравнения попробуйте в поиске на сайте ввести строку с HTML-тегами — она не создаст новую разметку.</p>
+  </section>
+</main>
+<footer class="site-footer"><p class="site-footer__copy">© 2026 F1 Hub · Мир Формулы-1</p></footer>
+</body>
+</html>

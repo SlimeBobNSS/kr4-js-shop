@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Выбор билетов на Гран-при Формулы-1: Лас-Вегас, Катар и Абу-Даби. Категории, цены и корзина." name="description"/>
+<title>
+   Каталог билетов — F1 Hub
+  </title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+<script defer="" src="js/data.js">
+</script>
+<script defer="" src="js/main.js">
+</script>
+<script defer="" src="js/cart.js">
+</script>
+<script defer="" src="js/catalog.js">
+</script>
+<script defer="" src="js/tickets.js">
+</script>
+<script defer="" src="js/validation.js">
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">
+   Перейти к основному содержимому
+  </a>
+<header class="site-header">
+<div class="site-header__inner">
+<a class="site-header__logo" href="index.html">
+     🏁 F1 Hub
+    </a>
+<button aria-controls="mobile-site-nav" aria-expanded="false" aria-label="Открыть меню" class="site-nav-toggle" type="button">
+<span aria-hidden="true" class="site-nav-toggle__icon">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</span>
+<span class="site-nav-toggle__label">
+      Меню
+     </span>
+</button>
+<nav aria-label="Основная навигация" class="site-nav" id="mobile-site-nav">
+<ul class="site-nav__list">
+<li class="site-nav__item">
+<a class="site-nav__link" href="index.html">
+        Главная
+       </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="catalog.html">
+        База данных
+       </a>
+</li>
+<li class="site-nav__item">
+<a aria-current="page" class="site-nav__link site-nav__link--active" href="order.html">
+        Билеты
+       </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="contacts.html">
+        Контакты
+       </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="cart.html">
+        Корзина
+        <span aria-label="Товаров в корзине" data-cart-count="">
+         0
+        </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="section">
+<nav aria-label="Хлебные крошки" class="breadcrumbs">
+<a class="breadcrumbs__link" href="index.html">
+      Главная
+     </a>
+<span class="breadcrumbs__current">
+      Билеты
+     </span>
+</nav>
+<h1 class="section__title">Билеты на Гран-при 2026</h1>
+<p class="catalog-data-note">Выберите Гран-при и категорию билета. Для каждого этапа доступны разные варианты посещения.</p>
+</div>
+<section class="section">
+<form class="ticket-controls" id="ticket-filters" data-ticket-filters="" role="search">
+<div class="order-form__field">
+<label class="order-form__label" for="ticket-search">
+       Поиск по Гран-при или категории
+      </label>
+<input class="order-form__input" id="ticket-search" data-ticket-search="" placeholder="Например, Катар" type="search"/>
+</div>
+<div class="order-form__field">
+<label class="order-form__label" for="ticket-category">
+       Категория
+      </label>
+<select class="order-form__input" id="ticket-category" data-ticket-category="">
+<option value="all">
+        Все категории
+       </option>
+<option value="general">
+        Свободное размещение
+       </option>
+<option value="grandstand">
+        Трибуна
+       </option>
+<option value="premium">
+        Премиум-трибуна
+       </option>
+<option value="vip">
+        VIP-зона
+       </option>
+</select>
+</div>
+<div class="order-form__field">
+<label class="order-form__label" for="ticket-sort">
+       Сортировка
+      </label>
+<select class="order-form__input" id="ticket-sort" data-ticket-sort="">
+<option value="default">По Гран-при и категориям</option>
+<option value="price-asc">
+        Цена: по возрастанию
+       </option>
+<option value="price-desc">
+        Цена: по убыванию
+       </option>
+<option value="title-asc">
+        По названию
+       </option>
+</select>
+</div>
+<label class="filters-checkbox">
+<input id="ticket-available" data-ticket-available="" type="checkbox"/>
+      Только доступные
+     </label>
+<button class="button button--secondary" type="reset">
+      Сбросить
+     </button>
+</form>
+<p class="catalog-data-note ticket-statistics" data-products-stats aria-live="polite">Загрузка статистики…</p>
+<div class="section-heading">
+<h2 class="catalog-products__title" data-tickets-heading>Билеты по Гран-при</h2>
+<span aria-live="polite" class="result-count" id="tickets-count" data-tickets-count="" role="status">
+</span>
+</div><p class="ticket-groups__hint" data-tickets-hint>При группировке билеты распределены по Гран-при. При выборе сортировки товары выводятся в общем порядке.</p>
+<div class="ticket-groups" data-tickets-container="" id="ticket-grid">
+</div>
+<p class="catalog-empty" hidden="" id="tickets-empty" data-tickets-empty="">
+     По указанным условиям билеты не найдены. Попробуйте изменить фильтры.
+    </p>
+<p class="cart-notice" hidden="" id="ticket-notice" data-ticket-notice="" role="status">
+</p>
+<p class="ticket-bottom-link">
+<a class="button button--primary" href="cart.html">
+      Перейти в корзину
+      <span data-cart-count="">
+       0
+      </span>
+</a>
+</p>
+</section>
+<dialog aria-labelledby="ticket-dialog-title" class="order-dialog" id="ticket-dialog">
+<h2 class="order-dialog__title" id="ticket-dialog-title">
+</h2>
+<p id="ticket-dialog-description">
+</p>
+<p class="product-card__price" id="ticket-dialog-price">
+</p>
+<div class="order-form__actions">
+<button class="button button--secondary" data-close-ticket-dialog="" type="button">
+      Закрыть
+     </button>
+<button class="button button--primary" data-action="add-to-cart" id="ticket-dialog-add" type="button">
+      В корзину
+     </button>
+</div>
+</dialog>
+
+<section class="section ticket-request" aria-labelledby="ticket-request-title">
+  <h2 class="section__title" id="ticket-request-title">Нужна помощь с выбором билета?</h2>
+  <p class="catalog-data-note">Если пока не определились с категорией, заполните запрос на подбор. После проверки полей появится подтверждение; данные на сервер не отправляются.</p>
+  <form class="product-info checkout-form ticket-request__form" id="ticket-request-form" novalidate>
+    <div class="order-form__field">
+      <label class="order-form__label" for="request-name">Имя</label>
+      <input class="order-form__input" id="request-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" aria-describedby="request-name-error" required>
+      <small class="field-error" id="request-name-error"></small>
+    </div>
+    <div class="order-form__field">
+      <label class="order-form__label" for="request-email">E-mail</label>
+      <input class="order-form__input" id="request-email" name="email" type="email" autocomplete="email" aria-describedby="request-email-error" required>
+      <small class="field-error" id="request-email-error"></small>
+    </div>
+    <div class="order-form__field">
+      <label class="order-form__label" for="request-phone">Телефон</label>
+      <input class="order-form__input" id="request-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 900 000-00-00" aria-describedby="request-phone-error" required>
+      <small class="field-error" id="request-phone-error"></small>
+    </div>
+    <div class="order-form__field form-field--checkbox">
+      <label><input id="request-agreement" name="agreement" type="checkbox" aria-describedby="request-agreement-error" required> Подтверждаю правильность контактных данных</label>
+      <small class="field-error" id="request-agreement-error"></small>
+    </div>
+    <button class="button button--primary" type="submit">Подготовить запрос</button>
+  </form>
+  <p class="form-feedback" id="ticket-request-status" role="status" aria-live="polite" hidden></p>
+</section>
+</main>
+<footer class="site-footer">
+<p class="site-footer__copy">© 2026 F1 Hub · Мир Формулы-1</p>
+</footer>
+</body>
+</html>
